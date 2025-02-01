@@ -49,8 +49,8 @@ streamlit run app.py
 6. Download **study notes & quiz in PDF format**.
 
 ## 📸 Screenshots
-![Study Notes Screenshot](study_notes.png)
-![Quiz Screenshot](quiz.png)
+![Study Notes Screenshot](study_notes.PNG)
+![Quiz Screenshot](quiz.PNG)
 
 ## 📚 Technologies Used
 - **Python** 🐍
