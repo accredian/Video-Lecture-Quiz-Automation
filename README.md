@@ -59,22 +59,6 @@ streamlit run app.py
 - **FPDF** (PDF Generation)
 - **Regex & JSON** (Data Parsing)
 
-## 🚀 Deployment Guide (Streamlit Cloud)
-
-### 1️⃣ Upload Project to GitHub
-Push your project to a **GitHub repository**.
-
-### 2️⃣ Deploy on Streamlit Cloud
-1. Go to [Streamlit Community Cloud](https://share.streamlit.io/).
-2. Click **New App**.
-3. Connect your **GitHub repository**.
-4. Select the **main script** (`app.py`).
-5. Click **Deploy**.
-
-### 3️⃣ Set API Key as Environment Variable (Optional)
-If needed, set **GROQ_CLOUD_API_KEY** as an **environment variable** in the Streamlit Cloud settings.
-
-
 ## 📬 Contact
 For any questions, reach out via vinaydhurwe@gmail.com(mailto:your-email@example.com) or open an **issue** on GitHub.
 
