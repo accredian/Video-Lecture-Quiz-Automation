@@ -74,14 +74,9 @@ Push your project to a **GitHub repository**.
 ### 3️⃣ Set API Key as Environment Variable (Optional)
 If needed, set **GROQ_CLOUD_API_KEY** as an **environment variable** in the Streamlit Cloud settings.
 
-## 🛠️ Contributing
-Feel free to **fork** this repository and create a **pull request** if you want to contribute!
-
-## 📜 License
-This project is **open-source** and available under the **MIT License**.
 
 ## 📬 Contact
-For any questions, reach out via [your-email@example.com](mailto:your-email@example.com) or open an **issue** on GitHub.
+For any questions, reach out via vinaydhurwe@gmail.com(mailto:your-email@example.com) or open an **issue** on GitHub.
 
 ---
 Made with ❤️ by [Your Name](https://github.com/yourusername)
