@@ -63,5 +63,5 @@ streamlit run app.py
 For any questions, reach out via vinaydhurwe@gmail.com(mailto:your-email@example.com) or open an **issue** on GitHub.
 
 ---
-Made with ❤️ by [Your Name](https://github.com/yourusername)
+Made with ❤️ by [Your Name](https://github.com/vinaydhurwe)
 
