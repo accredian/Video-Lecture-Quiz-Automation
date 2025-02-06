@@ -60,8 +60,8 @@ streamlit run app.py
 - **Regex & JSON** (Data Parsing)
 
 ## 📬 Contact
-For any questions, reach out via vinaydhurwe@gmail.com(mailto:your-email@example.com) or open an **issue** on GitHub.
+For any questions, reach out via vinaydhurwe@gmail.com or open an **issue** on GitHub.
 
 ---
-Made with ❤️ by [Your Name](https://github.com/vinaydhurwe)
+Made with ❤️ by [Vinay Dhurwe](https://github.com/vinaydhurwe)
 
