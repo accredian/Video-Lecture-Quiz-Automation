@@ -1,5 +1,3 @@
-#--------------------------groq cloud ---------------------------------------------
-
 import streamlit as st
 import os
 import re
@@ -63,13 +61,16 @@ def clean_markdown(text: str) -> str:
 def create_pdf(content: str, title: str = "Document") -> bytes:
     pdf = FPDF()
     pdf.add_page()
-    pdf.set_font("helvetica", size=12)  # Use built-in font "helvetica"
+    # Add a Unicode-capable version of Helvetica.
+    # Ensure "Helvetica.ttf" is available in the working directory or adjust the path accordingly.
+    pdf.add_font("Helvetica", "", "Helvetica.ttf", uni=True)
+    pdf.set_font("Helvetica", size=12)
     pdf.cell(0, 10, txt=title, ln=1, align="C")
     pdf.ln(10)
     pdf.multi_cell(0, 10, content)
-    pdf_output = pdf.output(dest="S").encode("utf-8")  # "latin1" encoding supports special characters
+    # Output PDF and encode using 'latin1'
+    pdf_output = pdf.output(dest="S").encode("latin1")
     return pdf_output
-
 
 # ---- AI Agent Calls ----
 class QuizAgents:
@@ -112,7 +113,7 @@ class QuizAgents:
             f"Extract key concepts, methodologies, technical terms, and important examples from the following {topic} lecture transcript. "
             "Organize them into clear categories such as 'Key Concepts', 'Methodologies', 'Important Terms', and 'Examples'. "
             "Provide concise explanations for each item where applicable. Ensure the output is well-structured and easy to follow."
-            "Ignore session logistics, greetings, general chatter, off-topic questions, student joining counts, session breaks ,or unrelated discussions. "
+            "Ignore session logistics, greetings, general chatter, off-topic questions, student joining counts, session breaks, or unrelated discussions. "
         )
         key_concepts = self._call_llm(transcription[:3000], system_msg)
         if not key_concepts:
@@ -180,6 +181,7 @@ class QuizAgents:
     Explanation: [Detailed explanation of why the correct answer is correct and why the other options are incorrect]
     Separate each QnA pair with "#####".
     Ensure the questions cover a variety of topics and difficulty levels, including conceptual understanding, application-based scenarios, and problem-solving.
+    avoid questions like what is the purpose of the lecture, what is the primary focus of the lecture in context to the course,  What is the purpose of using examples and comparisons between different techniques in the lecture, etc.
     """
         questions_text = self._call_llm(summarized_text[:2000], system_msg)
         blocks = questions_text.split("#####")
@@ -316,20 +318,3 @@ if st.session_state.show_quiz and st.session_state.qna_bank:
         quiz_text += f"Explanation: {qna['explanation']}\n\n"
     pdf_quiz = create_pdf(quiz_text, "Quiz")
     st.download_button("Download Quiz (PDF)", data=pdf_quiz, file_name="generated_quiz.pdf", mime="application/pdf")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
